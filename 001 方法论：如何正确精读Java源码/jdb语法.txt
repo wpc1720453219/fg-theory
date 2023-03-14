@@ -1,0 +1,29 @@
+1.jdb是jdk自带的Java调试器  jdb -version
+2. jdb [ options ] [ class ] [ arguments ]
+    --选项 (Options)
+        其中包括用于以高效方式调试Java程序的命令行选项。 JDB启动程序接受所有选项（例如-D，-classpath和-X）以及一些其他高级选项，例如（-attach，-listen，-launch等）。
+    --Class
+        它是您要在其上执行调试操作的类名。
+    --arguments
+        这些是在运行时为程序提供的输入值。 例如，arg[0],arg[1]到 main()方法
+3.JDB- 断点
+     > stop at <class name>:<Line no>    以下命令在特定行号处设置断点
+     > stop in <class name>:< Method name | Variable name>   以下命令在特定方法或特定变量上设置断点
+    \> jdb Add
+    > stop in Add.main   以下命令在Add类的main（）方法上设置断点
+    > run Add
+    cont  继续执行
+4.JDB - 步进
+list:检查您在代码中的位置
+cont:继续剩下的执行，进入下个断点
+step  下一行 遇到子函数就进入并且继续单步执行；在其他调试其中相当于step-into命
+next  执行下一行，不进入函数内部
+Step  Into    踏入
+Step  Over   跳过 
+Step  Out     跳出
+clear 查看哪些断点
+print  显示Java对象和原始值
+dump 对于原始值，此命令与print相同，会打印对象中定义的每个字段的当前值。 包括静态和实例字段
+
+
+https://iowiki.com/jdb/jdb_basic_commands.html

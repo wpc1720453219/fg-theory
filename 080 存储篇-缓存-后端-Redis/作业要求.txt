@@ -1,0 +1,15 @@
+自己编译一下redis对应的版本，然后用调试工具调试
+
+要求能够说明白
+
+1）如何创建监听socket
+2）监听socket是如何纳入事件监听框架
+3）客户端连接上来时，如何获取client socket
+4)client socket如何纳入事件监听框架
+5）redis为什么主体采用单线程？
+6）比较一下跟java框架的相同点和区别
+
+3|$argon2id$v=19$m=65536,t=4,p=1$M1BCSGpiVG15VFA1NDJRRw$BS7DgOb3PFJi6U3N+Rj1RFtedKZfHoLCYVhS82F+edE
+
+
+3|$argon2id$v=19$m=65536,t=4,p=1$blk0SnQyUWh0bjIwQS9aQQ$Q6Tp6MPNGASdyYCG3fcM66lUKySKOof5P/d8sr4s8Z0

@@ -1,0 +1,57 @@
+<configuration packagingData="false">
+
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+			<!--默认就是true -->
+			<immediateFlush>true</immediateFlush>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+
+	<appender name="ROLLING"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+
+		<encoder>
+			<pattern>%-5level %d{HH:mm:ss.SSS} [%thread] %logger{36} - %msg%n
+			</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+
+
+
+		<!-- 默认为true,以追加的方式启动而不是truncate 实际上代码强制为true -->
+		<append>true</append>
+
+		<!-- 写到的文件里 -->
+		<file>./logs/ruhr-socket-by-netty.log</file>
+
+		<!-- 文件翻滚策略,对历史文件的处理,新文件翻滚策略 -->
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>./logs/ruhr-socket-by-netty-backup/ruhr-socket-by-netty-%d{yyyy-MM-dd_HH}.%i.log
+			</fileNamePattern>
+			<maxFileSize>10MB</maxFileSize>
+			<!-- 先按照maxHistory删除一部分文件， 然后再按照totalSizeCap删除一部分文件 全部设置为0则不删除文件 -->
+			<!-- 因为上面是按小时滚动-所以这里表示先删除10天* 24小时之前的文件 -->
+			<maxHistory>240</maxHistory>
+			<!-- 然后再按照总大小来删除一部分文件 -->
+			<totalSizeCap>512MB</totalSizeCap>
+			<cleanHistoryOnStart>true</cleanHistoryOnStart>
+		</rollingPolicy>
+
+	</appender>
+
+
+	<!--全局配置,rootLogger一开始就存在 -->
+	<root level="info">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="ROLLING" />
+	</root>
+
+
+
+</configuration>

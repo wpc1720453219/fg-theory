@@ -28,7 +28,7 @@
    - 连接上来的socket，启动IO监听动作，按需进行IO读写操作
    - 针对读到的数据，执行业务逻辑操作，业务逻辑操作得到的数据，执行写操作，通过步骤2写回去
 2. 获取socket过程
-![img.png](img.png) 
+  ![img.png](./image/img.png) 
 3. socket数据处理流程
 >1.	应用层分发socket给IO线程组
 >2.	IO线程组将此新socket纳入某个线程的监听 可读可写事件的socket集合(每个线程托管1部分socket)
@@ -40,7 +40,7 @@
 >8.	不停循环  
 >
 
-4.各线程操作
+4.各线程操作  
 ![img.png](./image/img_2.png)
 
 ## 005 中间件-SpringBoot内的Tomcat

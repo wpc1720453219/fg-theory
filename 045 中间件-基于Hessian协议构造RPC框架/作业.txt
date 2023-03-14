@@ -1,0 +1,9 @@
+1）阐述一下序列化和反序列化
+
+
+
+2）自己debug一遍rpc on hessian的整个交互流程，图文阐述你的debug过程
+
+
+
+3）经过TCPIP/NIO/Tomcat/Netty/RPCOnHessian这几个培训后，相对于培训之前的你，有哪些收获？
