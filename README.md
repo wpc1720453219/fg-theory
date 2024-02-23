@@ -1,4 +1,4 @@
-# fg-theory
+# theory
 
 方法论与底层原理培训
 
